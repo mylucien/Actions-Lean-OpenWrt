@@ -35,19 +35,6 @@ echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.defa
 			git clone https://github.com/tty228/luci-app-serverchan.git package/other-plugins/luci-app-serverchan
 		fi
 
-		#采用lisaac的luci-app-dockerman
-		if [[ -e package/lean/luci-app-dockerman ]]; then
-			rm -rf package/lean/luci-app-dockerman
-		fi
-
-		if [[ -e package/other-plugins/luci-app-dockerman ]]; then
-			cd  package/other-plugins/luci-app-dockerman
-			source_update_No_git_pull
-			cd $HOME/$OW/$file/lede/
-		else
-			git clone https://github.com/lisaac/luci-app-dockerman.git package/other-plugins/luci-app-dockerman
-		fi
-
 		#下载lienol的fileassistant
 		if [[ -e package/other-plugins/luci-app-fileassistant ]]; then
 			rm -rf   package/other-plugins/luci-app-fileassistant
@@ -56,25 +43,6 @@ echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.defa
 			svn checkout https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-fileassistant package/other-plugins/luci-app-fileassistant
 		fi
 
-		#将diskman选项启用
-		sed -i "s/default n/default y/g" package/lean/luci-app-diskman/Makefile
-
-		if [[ -e package/other-plugins/copy-pan ]]; then
-			sed -i "s/lm-sensors autocore #tr_ok/lm-sensors autocore copy-pan #tr_ok/g" include/target.mk
-		else
-			echo ""
-		fi
-
-		#下载jd插件
-		if [[ -e package/other-plugins/luci-app-jd-dailybonus ]]; then
-			cd  package/other-plugins/node-request && source_update_No_git_pull
-			cd $HOME/$OW/$file/lede/
-			cd  package/other-plugins/luci-app-jd-dailybonus && source_update_No_git_pull
-			cd $HOME/$OW/$file/lede/
-		else
-			git clone https://github.com/jerrykuku/node-request.git package/other-plugins/node-request
-			git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/other-plugins/luci-app-jd-dailybonus
-		fi
 
 		#adguardhome插件
 		if [[ -e package/other-plugins/luci-app-adguardhome ]]; then
@@ -83,4 +51,12 @@ echo "src-git helloworld https://github.com/fw876/helloworld" >> feeds.conf.defa
 		else
 			git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/other-plugins/luci-app-adguardhome
 		fi
-    
+    	#隐藏首页显示用户名(by:kokang)
+	sed -i 's/name="luci_username" value="<%=duser%>"/name="luci_username"/g' feeds/luci/modules/luci-base/luasrc/view/sysauth.htm
+		
+	#移动光标至第一格(by:kokang)
+	sed -i "s/'luci_password'/'luci_username'/g" feeds/luci/modules/luci-base/luasrc/view/sysauth.htm
+
+	#修改固件生成名字,增加当天日期(by:左右）
+	sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=[$(shell date +%Y%m%d)]-$(VERSION_DIST_SANITIZED)/g' include/image.mk
+
