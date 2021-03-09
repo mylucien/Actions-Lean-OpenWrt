@@ -6,8 +6,8 @@
 			sed -i '$d' package/lean/default-settings/files/zzz-default-settings
 			echo "echo \"`date "+%Y-%m-%d %H:%M"` (commit:`git log -1 --format=format:'%C(bold white)%h%C(reset)'`)\" >> /etc/Compile_time" >> package/lean/default-settings/files/zzz-default-settings
 			echo "exit 0" >> package/lean/default-settings/files/zzz-default-settings
-    #other-plugins
-			mkdir package/other-plugins
+                #other-plugins
+		      mkdir package/other-plugins
 		fi		
 		#下载一下微信推送插件
 		if [[ -e package/other-plugins/luci-app-serverchan ]]; then
