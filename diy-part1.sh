@@ -1,11 +1,3 @@
-			sed -i '$a \       ' feeds/luci/modules/luci-base/po/zh-cn/base.po
-			sed -i '$a #首页显示编译时间' feeds/luci/modules/luci-base/po/zh-cn/base.po
-			sed -i '$a msgid "Compile_time"' feeds/luci/modules/luci-base/po/zh-cn/base.po
-			sed -i '$a msgstr "固件编译时间"' feeds/luci/modules/luci-base/po/zh-cn/base.po
-			sed -i '$d' package/lean/default-settings/files/zzz-default-settings
-			sed -i '$d' package/lean/default-settings/files/zzz-default-settings
-			echo "echo \"`date "+%Y-%m-%d %H:%M"` (commit:`git log -1 --format=format:'%C(bold white)%h%C(reset)'`)\" >> /etc/Compile_time" >> package/lean/default-settings/files/zzz-default-settings
-			echo "exit 0" >> package/lean/default-settings/files/zzz-default-settings
                 #other-plugins
 		      mkdir package/other-plugins
 		fi		
