@@ -76,6 +76,7 @@ jobs:
      
     - name: download luci-app-bridge
       run: |
+        cd openwrt
         wget https://raw.githubusercontent.com/mylucien/Actions-Lean-OpenWrt/main/luci-app-bridge.tar.gz
         tar -zxvf luci-app-bridge.tar.gz -C ./feeds/luci/applications
         pushd ./package/feeds/luci
