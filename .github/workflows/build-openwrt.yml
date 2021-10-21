@@ -86,7 +86,7 @@ jobs:
     - name: diy https-dns-proxy
       run: |
         cd openwrt/package/feeds/luci/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers
-        wget https://raw.githubusercontent.com/mylucien/Actions-Lean-OpenWrt/main/diy/gr.libredns.doh.lua
+        wget -nv -O https://raw.githubusercontent.com/mylucien/Actions-Lean-OpenWrt/main/diy/gr.libredns.doh.lua
 
     - name: Load custom configuration
       run: |
