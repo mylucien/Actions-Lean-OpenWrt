@@ -83,6 +83,14 @@ jobs:
         ln -s ../../../feeds/luci/applications/luci-app-bridge luci-app-bridge
         popd
 
+    - name: download luci-app-usbnet
+      run: |
+        cd openwrt
+        wget https://raw.githubusercontent.com/mylucien/Actions-Lean-OpenWrt/main/diy/luci-app-usbnet.tar.gz
+        wget https://raw.githubusercontent.com/mylucien/Actions-Lean-OpenWrt/main/diy/usbnet.tar.gz
+        tar -zxvf luci-app-usbnet.tar.gz -C ./package/lean
+        tar -zxvf usbnet.tar.gz -C ./package/lean
+
     - name: diy https-dns-proxy
       run: |
         cd openwrt/package/feeds/luci/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers
