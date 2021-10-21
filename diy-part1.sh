@@ -11,8 +11,8 @@
 sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.default
+#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >> feeds.conf.default
 
 # other-plugins
 git clone https://github.com/tty228/luci-app-serverchan.git package/other-plugins/luci-app-serverchan
