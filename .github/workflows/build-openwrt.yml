@@ -91,11 +91,6 @@ jobs:
         tar -zxvf luci-app-usbnet.tar.gz -C ./package/lean
         tar -zxvf usbnet.tar.gz -C ./package/lean
 
-    - name: diy https-dns-proxy
-      run: |
-        cd openwrt/package/feeds/luci/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers
-        wget -O gr.libredns.doh.lua https://raw.githubusercontent.com/mylucien/Actions-Lean-OpenWrt/main/diy/gr.libredns.doh.lua
-
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
