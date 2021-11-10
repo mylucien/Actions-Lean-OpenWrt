@@ -18,4 +18,4 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >> feeds.conf.defa
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/other-plugins/luci-app-adguardhome
 git clone https://github.com/pexcn/openwrt-chinadns-ng.git package/other-plugins/chinadns-ng
 git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/other-plugins/luci-app-chinadns-ng
-git clone https://github.com/riverscn/openwrt-iptvhelper.git package/openwrt-iptvhelper
+git clone https://github.com/riverscn/openwrt-iptvhelper.git package/other-plugins/openwrt-iptvhelper
