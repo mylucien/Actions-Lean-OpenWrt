@@ -19,5 +19,5 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/othe
 git clone https://github.com/pexcn/openwrt-chinadns-ng.git package/other-plugins/chinadns-ng
 git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/other-plugins/luci-app-chinadns-ng
 git clone https://github.com/riverscn/openwrt-iptvhelper.git package/other-plugins/openwrt-iptvhelper
-svn https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-supervisord package/other-plugins/luci-app-supervisord
-svn https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-nginx-manager package/other-plugins/luci-app-nginx-manager
+svn co https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-supervisord package/other-plugins/luci-app-supervisord
+svn co https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-nginx-manager package/other-plugins/luci-app-nginx-manager
