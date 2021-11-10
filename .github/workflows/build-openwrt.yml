@@ -70,12 +70,6 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
-      
-    - name: update https_dns_proxy
-      run: |
-        cd openwrt/feeds/packages/net
-        rm -rf https-dns-proxy
-        svn co https://github.com/openwrt/packages/trunk/net/https-dns-proxy
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
