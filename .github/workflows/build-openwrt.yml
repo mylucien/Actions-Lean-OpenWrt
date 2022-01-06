@@ -88,8 +88,8 @@ jobs:
         cd openwrt
         wget https://raw.githubusercontent.com/mylucien/Actions-Lean-OpenWrt/main/diy/luci-app-usbnet.tar.gz
         wget https://raw.githubusercontent.com/mylucien/Actions-Lean-OpenWrt/main/diy/usbnet.tar.gz
-        tar -zxvf luci-app-usbnet.tar.gz -C ./package/lean
-        tar -zxvf usbnet.tar.gz -C ./package/lean
+        tar -zxvf luci-app-usbnet.tar.gz -C ./package/other-plugins
+        tar -zxvf usbnet.tar.gz -C ./package/other-plugins
         
     - name: Load custom configuration
       run: |
