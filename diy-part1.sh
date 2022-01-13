@@ -21,5 +21,5 @@ git clone https://github.com/izilzty/luci-app-chinadns-ng.git package/other-plug
 git clone https://github.com/riverscn/openwrt-iptvhelper.git package/other-plugins/openwrt-iptvhelper
 git clone https://github.com/thinktip/luci-theme-neobird.git package/other-plugins/luci-theme-neobird
 svn co https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-supervisord package/other-plugins/luci-app-supervisord
-svn co https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-nginx-manager package/other-plugins/luci-app-nginx-manager
+#svn co https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-nginx-manager package/other-plugins/luci-app-nginx-manager
 #git clone https://github.com/sirpdboy/netspeedtest.git package/other-plugins/netspeedtest
